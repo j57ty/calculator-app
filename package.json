@@ -17,14 +17,18 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "gh-pages": "^6.3.0",
     "typescript": "~6.0.3"
   },
+  "homepage": "https://j57ty.github.io/calculator-app",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build": "expo export --platform web",
+    "predeploy": "npm run build && node prepare-gh-pages.js",
+    "deploy": "gh-pages -d dist -t",
     "test": "node test-suite.js"
   },
   "private": true
