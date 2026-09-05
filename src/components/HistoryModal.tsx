@@ -8,7 +8,7 @@ import {
   FlatList,
   Platform,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Icon } from './Icon';
 import { useTheme } from '../theme/ThemeContext';
 import { HistoryItem } from '../types/calculator';
 import { formatDisplayExpression } from '../utils/calculatorEngine';
@@ -47,7 +47,7 @@ export const HistoryModal: React.FC<HistoryModalProps> = ({
           {/* Header */}
           <View style={styles.header}>
             <View style={styles.headerTitleRow}>
-              <Ionicons name="time" size={22} color={colors.accent} />
+              <Icon name="time" size={22} color={colors.accent} />
               <Text style={[styles.title, { color: colors.textPrimary }]}>History</Text>
             </View>
 
@@ -58,7 +58,7 @@ export const HistoryModal: React.FC<HistoryModalProps> = ({
                 </TouchableOpacity>
               )}
               <TouchableOpacity onPress={onClose} style={styles.closeBtn}>
-                <Ionicons name="close" size={24} color={colors.textSecondary} />
+                <Icon name="close" size={22} color={colors.textSecondary} />
               </TouchableOpacity>
             </View>
           </View>
@@ -66,7 +66,7 @@ export const HistoryModal: React.FC<HistoryModalProps> = ({
           {/* List or Empty State */}
           {history.length === 0 ? (
             <View style={styles.emptyContainer}>
-              <Ionicons name="calculator-outline" size={54} color={colors.border} />
+              <Icon name="calculator" size={54} color={colors.border} />
               <Text style={[styles.emptyText, { color: colors.textSecondary }]}>
                 No calculations yet
               </Text>

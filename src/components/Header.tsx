@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Icon } from './Icon';
 import { useTheme } from '../theme/ThemeContext';
 import { CalculatorMode } from '../types/calculator';
 
@@ -62,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({
           style={[styles.circleButton, { backgroundColor: colors.surface, borderColor: colors.border }]}
           activeOpacity={0.7}
         >
-          <Ionicons name="time-outline" size={20} color={colors.textPrimary} />
+          <Icon name="time" size={18} color={colors.textPrimary} />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -70,9 +70,9 @@ export const Header: React.FC<HeaderProps> = ({
           style={[styles.circleButton, { backgroundColor: colors.surface, borderColor: colors.border }]}
           activeOpacity={0.7}
         >
-          <Ionicons
-            name={theme === 'dark' ? 'sunny-outline' : 'moon-outline'}
-            size={20}
+          <Icon
+            name={theme === 'dark' ? 'sun' : 'moon'}
+            size={18}
             color={colors.accent}
           />
         </TouchableOpacity>

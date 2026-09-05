@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ScrollView, Animated } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Icon } from './Icon';
 import { useTheme } from '../theme/ThemeContext';
 import { AngleMode, CalculatorMode } from '../types/calculator';
 import { formatDisplayExpression } from '../utils/calculatorEngine';
@@ -83,7 +83,7 @@ export const Display: React.FC<DisplayProps> = ({
         {/* Copied Toast Banner */}
         {copiedToastVisible && (
           <View style={[styles.toastPill, { backgroundColor: colors.accent }]}>
-            <Ionicons name="checkmark-circle" size={14} color="#FFFFFF" />
+            <Icon name="check" size={12} color="#FFFFFF" />
             <Text style={styles.toastText}>Copied</Text>
           </View>
         )}
@@ -92,7 +92,7 @@ export const Display: React.FC<DisplayProps> = ({
         <View style={styles.actionsRow}>
           {expression.length > 0 && (
             <TouchableOpacity onPress={onBackspace} style={styles.iconButton} hitSlop={8}>
-              <Ionicons name="backspace-outline" size={24} color={colors.accent} />
+              <Icon name="backspace" size={20} color={colors.accent} />
             </TouchableOpacity>
           )}
         </View>

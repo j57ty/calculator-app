@@ -9,7 +9,7 @@ import {
   FlatList,
   ActivityIndicator,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Icon } from './Icon';
 import { useTheme } from '../theme/ThemeContext';
 import { UnitCategory, UnitDefinition } from '../types/calculator';
 import { UNIT_CATEGORIES, convertValue, fetchLiveExchangeRates } from '../utils/converters';
@@ -180,7 +180,7 @@ export const ConverterScreen: React.FC = () => {
                 {fromUnit.name} ({fromUnit.symbol})
               </Text>
             </View>
-            <Ionicons name="chevron-down" size={18} color={colors.accent} />
+            <Icon name="chevron-down" size={16} color={colors.accent} />
           </TouchableOpacity>
 
           <Text
@@ -200,7 +200,7 @@ export const ConverterScreen: React.FC = () => {
             onPress={handleSwap}
             activeOpacity={0.8}
           >
-            <Ionicons name="swap-vertical" size={20} color="#FFFFFF" />
+            <Icon name="swap-vertical" size={18} color="#FFFFFF" />
           </TouchableOpacity>
           <View style={[styles.swapLine, { backgroundColor: colors.border }]} />
         </View>
@@ -217,7 +217,7 @@ export const ConverterScreen: React.FC = () => {
                 {toUnit.name} ({toUnit.symbol})
               </Text>
             </View>
-            <Ionicons name="chevron-down" size={18} color={colors.accent} />
+            <Icon name="chevron-down" size={16} color={colors.accent} />
           </TouchableOpacity>
 
           <Text
@@ -245,7 +245,7 @@ export const ConverterScreen: React.FC = () => {
               <ActivityIndicator size="small" color={colors.accent} />
             ) : (
               <View style={styles.refreshBtnRow}>
-                <Ionicons name="refresh" size={13} color={colors.accent} />
+                <Icon name="refresh" size={13} color={colors.accent} />
                 <Text style={[styles.refreshText, { color: colors.accent }]}>Refresh</Text>
               </View>
             )}
@@ -296,7 +296,7 @@ export const ConverterScreen: React.FC = () => {
                 Select {pickerTarget === 'from' ? 'Source' : 'Target'} Unit
               </Text>
               <TouchableOpacity onPress={() => setPickerVisible(false)}>
-                <Ionicons name="close" size={24} color={colors.textSecondary} />
+                <Icon name="close" size={22} color={colors.textSecondary} />
               </TouchableOpacity>
             </View>
 
